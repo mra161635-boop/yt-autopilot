@@ -1,0 +1,15 @@
+{
+  "title": "Wealth Creation for Beginners",
+  "description": "Create wealth in your 20s with these tips!",
+  "tags": "[\"wealth creation\", \"beginner\", \"financial freedom\"]",
+  "thumbnail_prompt": "YouTube thumbnail for: Wealth Creation for Beginners",
+  "script": [
+    {
+      "section": "Full",
+      "timestamp": "0:00",
+      "voiceover": "{\n  \"title\": \"Wealth Creation 101\",\n  \"description\": \"Welcome to MoneyMoves! Creating wealth in your 20s can seem daunting, but with the right strategies, you can set yourself up for financial freedom. In this video, we'll share our top tips for wealth creation, perfect for beginners. Check out the timestamps below to jump to a specific topic: \n  0:15 - Introduction to wealth creation\n  1:00 - Tip #1: Start investing early\n  2:30 - Tip #2: Live below your means\n  4:00 - Tip #3: Build multiple income streams\n  5:30 - Tip #4: Educate yourself on personal finance\n  6:45 - Summary and key takeaways\n  8:00 - Call-to-action and next steps\n\nIf you're new to the world of personal finance, you might be wondering where to start. The good news is that creating wealth is a marathon, not a sprint. By starting early and making smart financial decisions, you can set yourself up for long-term success. \n\nIn this video, we'll cover the basics of wealth creation, including the importance of investing, budgeting, and building multiple income streams. We'll also share some practical tips for getting started, including how to invest with little money and how to avoid common financial mistakes. \n\nDon't forget to like and subscribe for more content on personal finance and wealth creation. Join our community to connect with other like-minded individuals and stay up-to-date on the latest financial news and trends. \n\n#WealthCreation #FinancialFreedom #MoneyMoves #PersonalFinance #InvestingForBeginners #BudgetingTips #MultipleIncomeStreams #FinancialLiteracy #MoneyManagement #WealthBuilding\",\n  \"tags\": [\"wealth creation\", \"beginner\", \"financial freedom\", \"personal finance\", \"investing for beginners\", \"budgeting tips\", \"multiple income streams\", \"financial literacy\", \"money management\", \"wealth building\"],\n  \"thumbnail_prompt\": \"A young adult (20s-30s) with a friendly and approachable smile, standing in front of a city skyline or a stock market board, with a tablet or laptop in hand. The backgr",
+      "visual": "talking head",
+      "duration_sec": 300
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "title": "Investing 101: Basics",
+  "description": "New to investing? Start here! This video covers the basics of investing for beginners, from understanding the stock market to getting started with your first investment. We'll break down the key concepts and terminology you need to know, so you can feel confident and start growing your wealth. Timestamps: 0:15 - Introduction to Investing, 1:30 - Understanding Risk and Return, 3:00 - Investment Options, 5:00 - Diversification and Portfolios, 6:30 - Summary and Next Steps. Don't forget to subscribe to our channel for more personal finance tips and tricks! If you have any questions or topics you'd like to see covered, please leave them in the comments below. #investingforbeginners #investmentbasics #stockmarket #personalfinance #moneymoves #wealthbuilding #financialfreedom #investing101",
+  "tags": [
+    "investing for beginners",
+    "investment basics",
+    "stock market",
+    "personalfinance",
+    "moneymoves",
+    "wealthbuilding",
+    "financialfreedom",
+    "investing101",
+    "newtoinvesting",
+    "stockmarketforbeginners",
+    "investingtips"
+  ],
+  "thumbnail_prompt": "A young adult (20s-30s) with a friendly smile, looking at a laptop screen with a stock market graph in the background. The style is modern and minimalist, with a color scheme of blues and whites. The text overlay should read 'Investing 101: Basics' in a bold, easy-to-read font.",
+  "script": [
+    {
+      "section": "Hook",
+      "timestamp": "0:00",
+      "voiceover": "Are you new to investing? Want to start building wealth, but not sure where to begin? You're in the right place!",
+      "visual": "Animated text 'New to Investing?' on a background of stock market graphs and financial news scrolls",
+      "duration_sec": 15
+    },
+    {
+      "section": "Intro",
+      "timestamp": "0:15",
+      "voiceover": "Welcome to MoneyMoves! In this video, we'll cover the basics of investing, from understanding the stock market to getting started with your first investment. We'll keep it simple, so you can feel confident and start growing your wealth.",
+      "visual": "Intro to MoneyMoves channel, with a montage of financial graphics and animations",
+      "duration_sec": 30
+    },
+    {
+      "section": "Understanding Risk and Return",
+      "timestamp": "1:30",
+      "voiceover": "When it comes to investing, there are two key concepts to understand: risk and return. Risk refers to the possibility of losing some or all of your investment, while return refers to the potential gain. Generally, higher-risk investments offer higher potential returns, but they also come with a greater chance of loss.",
+      "visual": "Animated graphs showing risk and return, with examples of high-risk and low-risk investments",
+      "duration_sec": 60
+    },
+    {
+      "section": "Investment Options",
+      "timestamp": "3:00",
+      "voiceover": "So, what are your investment options? You've got stocks, bonds, ETFs, mutual funds, and more. Each has its own pros and cons, and some are more suitable for beginners than others. We'll give you a quick rundown of the most popular options.",
+      "visual": "B-roll footage of financial news, with animated text overlays explaining different investment options",
+      "duration_sec": 90
+    },
+    {
+      "section": "Diversification and Portfolios",
+      "timestamp": "5:00",
+      "voiceover": "Diversification is key to a successful investment strategy. This means spreading your investments across different asset classes, sectors, and geographies. A well-diversified portfolio can help you ride out market ups and downs, and increase your potential for long-term growth.",
+      "visual": "Animated illustrations of diversification, with examples of different asset classes and sectors",
+      "duration_sec": 90
+    },
+    {
+      "section": "Summary",
+      "timestamp": "6:30",
+      "voiceover": "So, to summarize: investing is all about understanding risk and return, choosing the right investment options, and diversifying your portfolio. It's not rocket science, but it does take some knowledge and planning.",
+      "visual": "Summary graphic with key points, and a call-to-action to subscribe to the channel",
+      "duration_sec": 60
+    },
+    {
+      "section": "CTA/Outro",
+      "timestamp": "7:30",
+      "voiceover": "Thanks for watching MoneyMoves! If you're ready to start your investing journey, be sure to subscribe to our channel for more tips and tutorials. And if you have any questions or topics you'd like to see covered, please leave them in the comments below.",
+      "visual": "Outro to MoneyMoves channel, with a call-to-action to subscribe and a link to the next video",
+      "duration_sec": 30
+    }
+  ]
+}

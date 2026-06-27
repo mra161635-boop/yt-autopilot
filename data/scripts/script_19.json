@@ -1,0 +1,15 @@
+{
+  "title": "Side Hustle for Beginners",
+  "description": "Start a side hustle in 30 days!",
+  "tags": "[\"side hustle\", \"beginner\", \"increase income\"]",
+  "thumbnail_prompt": "YouTube thumbnail for: Side Hustle for Beginners",
+  "script": [
+    {
+      "section": "Full",
+      "timestamp": "0:00",
+      "voiceover": "{\n  \"title\": \"Side Hustle in 30 Days\",\n  \"description\": \"Want to increase your income and achieve financial freedom? Starting a side hustle is a great way to do it! In this video, we'll show you how to start a side hustle in just 30 days. Whether you're a beginner or just looking for a new way to make money, this video is for you. We'll cover the basics of side hustles, including what they are, why you need one, and how to get started. Timestamps: \n  0:00 - Introduction to side hustles\n  0:45 - What is a side hustle and why do you need one?\n  2:30 - Point 1: Identify your skills and passions\n  4:15 - Point 2: Research profitable side hustles\n  6:00 - Point 3: Create a business plan and set goals\n  8:00 - Point 4: Take action and start your side hustle\n  9:30 - Summary and final tips\n  10:00 - Call to action and outro. Don't forget to like, comment, and subscribe for more personal finance tips and tricks! #SideHustle #IncreaseIncome #FinancialFreedom #MoneyMoves #PersonalFinance #BeginnerFriendly #MakeMoneyOnline #SideHustleIdeas #PassiveIncome\",\n  \"tags\": [\"side hustle\", \"beginner\", \"increase income\", \"financial freedom\", \"money moves\", \"personal finance\", \"make money online\", \"passive income\", \"side hustle ideas\", \"online business\"],\n  \"thumbnail_prompt\": \"A young adult sitting at a desk with a laptop, looking excited and motivated. The background is a bright and colorful home office with plants and inspirational quotes on the wall. The text overlay reads 'Start a Side Hustle in 30 Days' in bold, playful font. The style is modern and minimalist, with a mix of digital and natural elements.\",\n  \"script\": [\n    {\n      \"section\": \"Hook\",\n      \"timestamp\": \"0:00\",\n      \"voiceover\": \"Hey there, future entrepreneurs! Want to increase your income and achieve financial freedom? Well, you're in the right place! In this video, we'll show you how to start a side hustle in just 30 days.\",\n      \"visual\": \"Upbeat background music starts playing. The host appears on screen wit",
+      "visual": "talking head",
+      "duration_sec": 300
+    }
+  ]
+}

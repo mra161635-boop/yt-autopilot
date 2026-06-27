@@ -1,0 +1,32 @@
+{
+  "_updated_by": "channel_manager",
+  "_updated_at": "2026-06-27T12:09:29.772307+00:00",
+  "video_length_min": 8,
+  "video_length_max": 15,
+  "short_length_sec": 60,
+  "publish_days": [
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri"
+  ],
+  "publish_hour": 12,
+  "long_videos_per_week": 2,
+  "shorts_per_week": 3,
+  "auto_clip_shorts_from_long": true,
+  "channel_style": "friendly, energetic, short and punchy, with a focus on informative and entertaining content",
+  "required_keywords": [
+    "personal finance",
+    "saving",
+    "investing",
+    "budgeting",
+    "money management"
+  ],
+  "idea_scoring_bias": "prioritize ideas with high search volume, low competition, and high audience engagement",
+  "script_instruction_override": "include a personal anecdote, example, or story in each script, and provide actionable tips and advice",
+  "title_rules": "Use [Number] [Adjective] [Noun] to [Desired Outcome] format",
+  "thumbnail_style": "use colorful, eye-catching, and high-contrast graphics with text overlays and emojis",
+  "hook_style": "start with a surprising statistic, interesting fact, or thought-provoking question",
+  "cta_instruction": "end each video with a clear call-to-action to like, comment, subscribe, and share the video with others"
+}

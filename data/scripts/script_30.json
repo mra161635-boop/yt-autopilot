@@ -1,0 +1,69 @@
+{
+  "title": "Investing 101: Grow Your Wealth",
+  "description": "Ready to start growing your wealth? Investing can seem intimidating, but it doesn't have to be. In this video, we'll break down the basics of investing for beginners and provide you with a solid foundation to start building your wealth. We'll cover the stock market, different types of investments, and how to get started with financial investing. Whether you're 18 or 35, it's never too early or too late to start investing. Timestamps: 0:00 - Introduction, 0:45 - What is Investing?, 2:30 - Types of Investments, 4:45 - How to Get Started, 6:45 - Summary, 8:00 - Call to Action. Don't forget to like, comment, and subscribe for more personal finance tips and tricks. #investingforbeginners #stockmarket #financialinvesting #wealthbuilding #personalfinance #moneymoves #investing101 #growyourwealth #financialfreedom #moneytips #investingtips",
+  "tags": [
+    "investing for beginners",
+    "stock market",
+    "financial investing",
+    "wealth building",
+    "personal finance",
+    "money moves",
+    "investing 101",
+    "grow your wealth",
+    "financial freedom",
+    "money tips",
+    "investing tips"
+  ],
+  "thumbnail_prompt": "A young adult (20s-30s) with a friendly and approachable smile, sitting in front of a laptop with a stock market graph on the screen. The background is a modern and sleek living room with a cityscape outside the window. The text overlay reads 'Investing 101: Grow Your Wealth' in a bold and colorful font. The style is minimalist and modern, with a color scheme of blues and whites to convey trust and professionalism.",
+  "script": [
+    {
+      "section": "Hook",
+      "timestamp": "0:00",
+      "voiceover": "Ready to start growing your wealth? Investing can seem intimidating, but it doesn't have to be. In this video, we'll break down the basics of investing for beginners.",
+      "visual": "Aerial footage of a cityscape with a growing graph overlay",
+      "duration_sec": 15
+    },
+    {
+      "section": "Intro",
+      "timestamp": "0:15",
+      "voiceover": "Hey everyone, welcome back to MoneyMoves! Today, we're talking about investing for beginners. Whether you're just starting out or looking to boost your financial knowledge, this video is for you.",
+      "visual": "Intro animation with the channel logo and a montage of financial graphics",
+      "duration_sec": 30
+    },
+    {
+      "section": "What is Investing?",
+      "timestamp": "0:45",
+      "voiceover": "So, what is investing? Simply put, investing is the act of putting your money into assets that have a potential for growth. This can include stocks, bonds, real estate, and more.",
+      "visual": "Animation explaining different types of investments, with B-roll footage of stock market floors and financial news",
+      "duration_sec": 60
+    },
+    {
+      "section": "Types of Investments",
+      "timestamp": "2:30",
+      "voiceover": "Now, let's dive into the different types of investments. We have stocks, bonds, ETFs, and mutual funds, to name a few. Each type of investment comes with its own level of risk and potential return.",
+      "visual": "Infographic explaining different types of investments, with B-roll footage of financial news and market analysis",
+      "duration_sec": 90
+    },
+    {
+      "section": "How to Get Started",
+      "timestamp": "4:45",
+      "voiceover": "So, how do you get started with investing? First, you'll want to open a brokerage account. From there, you can start exploring different investment options and building your portfolio.",
+      "visual": "Step-by-step tutorial on opening a brokerage account, with B-roll footage of laptops and online trading platforms",
+      "duration_sec": 90
+    },
+    {
+      "section": "Summary",
+      "timestamp": "6:45",
+      "voiceover": "To recap, investing is a great way to grow your wealth over time. By understanding the different types of investments and getting started with a solid foundation, you can set yourself up for financial success.",
+      "visual": "Summary animation with key points and a call-to-action",
+      "duration_sec": 45
+    },
+    {
+      "section": "CTA/Outro",
+      "timestamp": "8:00",
+      "voiceover": "Thanks for watching, and don't forget to like, comment, and subscribe for more personal finance tips and tricks! If you're ready to start growing your wealth, check out the links in our description box below.",
+      "visual": "Outro animation with the channel logo and a call-to-action",
+      "duration_sec": 30
+    }
+  ]
+}

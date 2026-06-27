@@ -1,0 +1,74 @@
+{
+  "title": "Bitcoin for Beginners: Invest with $100!",
+  "description": "Welcome to MoneyMoves! Are you curious about cryptocurrency but not sure where to start? In this video, we'll break down the basics of Bitcoin and show you how to get started with as little as $100. Whether you're a seasoned investor or just starting out, this video is perfect for anyone looking to learn about cryptocurrency. Timestamps:   0:00 Introduction to Bitcoin  1:30 What is cryptocurrency?  3:00 How to buy Bitcoin with $100  5:00 Risks and benefits of investing in Bitcoin  7:00 Tips for beginners  9:00 Summary and next steps  Don't forget to like, comment, and subscribe for more personal finance tips and tricks! #cryptocurrency #bitcoin #investing #personalfinance #moneymoves #beginnersguide",
+  "tags": [
+    "cryptocurrency",
+    "bitcoin",
+    "investing",
+    "personalfinance",
+    "moneymoves",
+    "beginnersguide",
+    "bitcoinforbeginners",
+    "investwith100",
+    "cryptocurrencyforbeginners"
+  ],
+  "thumbnail_prompt": "A young adult with a surprised and excited expression, looking at their phone with a Bitcoin graph on the screen. The background is a bright and colorful cityscape with a few Bitcoin logos scattered around. The text overlay should read 'Invest in Bitcoin with $100!' in a bold, playful font.",
+  "script": [
+    {
+      "section": "Hook",
+      "timestamp": "0:00",
+      "voiceover": "Hey there, MoneyMovers! Are you ready to dip your toes into the world of cryptocurrency? You can start investing in Bitcoin with as little as $100! ",
+      "visual": "Upbeat background music starts playing. A young adult is shown looking at their phone with a surprised expression, with a Bitcoin graph on the screen.",
+      "duration_sec": 15
+    },
+    {
+      "section": "Intro",
+      "timestamp": "0:15",
+      "voiceover": "Welcome to MoneyMoves! In this video, we'll be covering the basics of cryptocurrency and how to get started with Bitcoin. Don't worry if you're new to this \u2013 we'll take it one step at a time.",
+      "visual": "Animated text 'Cryptocurrency for Beginners' appears on screen, with a brief animation of a Bitcoin logo.",
+      "duration_sec": 30
+    },
+    {
+      "section": "What is Cryptocurrency?",
+      "timestamp": "0:45",
+      "voiceover": "So, what is cryptocurrency? Simply put, it's a digital or virtual currency that uses cryptography for security. Bitcoin is the most well-known type of cryptocurrency, but there are many others out there.",
+      "visual": "B-roll footage of computers, coding, and cryptocurrency exchanges. Animated text 'Cryptocurrency 101' appears on screen.",
+      "duration_sec": 60
+    },
+    {
+      "section": "How to Buy Bitcoin",
+      "timestamp": "1:45",
+      "voiceover": "Now, let's talk about how to buy Bitcoin. You can buy Bitcoin using a cryptocurrency exchange, such as Coinbase or Binance. You can even start with as little as $100!",
+      "visual": "B-roll footage of a person using their phone to buy Bitcoin on a cryptocurrency exchange. Animated text 'Buy Bitcoin with $100' appears on screen.",
+      "duration_sec": 90
+    },
+    {
+      "section": "Risks and Benefits",
+      "timestamp": "3:15",
+      "voiceover": "As with any investment, there are risks and benefits to investing in Bitcoin. The value of Bitcoin can fluctuate rapidly, and it's not backed by any government or institution. However, many people believe that Bitcoin has the potential to increase in value over time.",
+      "visual": "B-roll footage of stock market screens, with animated graphs showing the fluctuation of Bitcoin's value. Animated text 'Risks and Benefits' appears on screen.",
+      "duration_sec": 90
+    },
+    {
+      "section": "Tips for Beginners",
+      "timestamp": "5:00",
+      "voiceover": "So, what are some tips for beginners? First, make sure you do your research and understand the risks. Second, start small and don't invest more than you can afford to lose. Finally, consider using a reputable exchange and keeping your coins in a secure wallet.",
+      "visual": "B-roll footage of a person researching on their computer, with animated text 'Tips for Beginners' appearing on screen.",
+      "duration_sec": 120
+    },
+    {
+      "section": "Summary",
+      "timestamp": "7:00",
+      "voiceover": "In summary, cryptocurrency is a digital or virtual currency that uses cryptography for security. Bitcoin is the most well-known type of cryptocurrency, and you can start investing with as little as $100. Remember to do your research, start small, and keep your coins in a secure wallet.",
+      "visual": "Animated summary graphic appears on screen, with a brief animation of a Bitcoin logo.",
+      "duration_sec": 60
+    },
+    {
+      "section": "CTA/Outro",
+      "timestamp": "8:00",
+      "voiceover": "Thanks for watching MoneyMovers! If you're ready to start your cryptocurrency journey, be sure to check out the links in our description box below. Don't forget to like, comment, and subscribe for more personal finance tips and tricks!",
+      "visual": "Outro music starts playing, with a call-to-action on the screen to like, comment, and subscribe. The MoneyMovers logo appears, along with a brief animation of a Bitcoin logo.",
+      "duration_sec": 120
+    }
+  ]
+}

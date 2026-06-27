@@ -1,0 +1,60 @@
+name: YouTube Autopilot
+
+on:
+  schedule:
+    # Every 8 hours — produces 3 long + 3 short videos/day
+    - cron: '0 6,14,22 * * *'
+  workflow_dispatch:  # manual trigger
+
+env:
+  LLM_PROVIDER: openai_compat
+  LLM_BASE_URL: https://api.groq.com/openai
+
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120  # single cycle takes ~30-45 min
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install ffmpeg
+        run: sudo apt update && sudo apt install -y ffmpeg
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Restore data cache (DB + ideas + scripts)
+        uses: actions/cache@v4
+        with:
+          path: |
+            data/
+            output/
+          key: yt-autopilot-data
+
+      - name: Decode YouTube OAuth token
+        env:
+          TOKEN_B64: ${{ secrets.YT_TOKEN_PICKLE_B64 }}
+        run: |
+          mkdir -p data
+          echo "$TOKEN_B64" | base64 -d > data/yt_token.pickle
+
+      - name: Run production cycle
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: python main.py --now
+
+      - name: Upload any produced videos (for debugging)
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: output-videos
+          path: output/videos/
+          retention-days: 3

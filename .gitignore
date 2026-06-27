@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+*.pickle
+output/videos/
+.DS_Store
+.env
+YT.json
+client_secret.json

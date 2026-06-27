@@ -1,0 +1,83 @@
+{
+  "title": "Save $500 in 60 Days!",
+  "description": "Want to save $500 in just 60 days? In this video, we'll share our top saving money tips for beginners. From creating a budget to cutting back on unnecessary expenses, we've got you covered. Whether you're trying to pay off debt, build up your emergency fund, or just want to start saving for the future, these tips will help you get started.   Timestamps:   0:00 - Hook  0:15 - Intro  0:45 - Tip #1: Create a Budget  2:15 - Tip #2: Cut Back on Subscriptions  3:45 - Tip #3: Cook at Home  5:15 - Tip #4: Shop Smart  6:45 - Tip #5: Avoid Impulse Buys  8:00 - Summary  9:00 - Outro/CTA  Thanks for watching! If you found these tips helpful, be sure to like and subscribe for more personal finance content.   #savingmoneytips #personalfinanceforbeginners #frugalliving #moneymoves #savemoney #investmoney #financialfreedom #budgetingtips #moneymanagement",
+  "tags": [
+    "saving money tips",
+    "personal finance for beginners",
+    "frugal living",
+    "money moves",
+    "save money",
+    "invest money",
+    "financial freedom",
+    "budgeting tips",
+    "money management",
+    "debt repayment",
+    "emergency fund"
+  ],
+  "thumbnail_prompt": "A young adult with a determined expression, holding a piggy bank and standing in front of a city skyline at sunset. The style is colorful and modern, with a text overlay that reads 'Save $500 in 60 Days!' in bold, white font. The background is a warm orange color, representing savings and financial growth.",
+  "script": [
+    {
+      "section": "Hook",
+      "timestamp": "0:00",
+      "voiceover": "Hey there, MoneyMoves community! Are you tired of living paycheck to paycheck? Want to save $500 in just 60 days? In this video, we'll share our top saving money tips to help you reach your goal.",
+      "visual": "Upbeat background music starts playing. A animated clock appears on screen, counting down from 60 days. A young adult is shown in the background, looking determined and holding a piggy bank.",
+      "duration_sec": 15
+    },
+    {
+      "section": "Intro",
+      "timestamp": "0:15",
+      "voiceover": "Welcome back to MoneyMoves, your go-to channel for personal finance tips and tricks. I'm your host, and today we're talking about saving money. Whether you're trying to pay off debt, build up your emergency fund, or just want to start saving for the future, these tips will help you get started.",
+      "visual": "The animated clock disappears, and the host appears on screen with a friendly smile. B-roll footage of a person budgeting, saving money, and investing plays in the background.",
+      "duration_sec": 30
+    },
+    {
+      "section": "Tip #1: Create a Budget",
+      "timestamp": "0:45",
+      "voiceover": "Tip number one: create a budget. You can't save money if you don't know where your money is going. Take some time to track your expenses and make a budget that works for you. You can use a budgeting app, spreadsheet, or even just a piece of paper.",
+      "visual": "B-roll footage of a person using a budgeting app on their phone, and another person writing in a budgeting journal. The host appears on screen with a tablet, showing a budgeting spreadsheet.",
+      "duration_sec": 60
+    },
+    {
+      "section": "Tip #2: Cut Back on Subscriptions",
+      "timestamp": "2:15",
+      "voiceover": "Tip number two: cut back on subscriptions. Take a closer look at your subscriptions and see what you can cut back on. Do you really need that gym membership or streaming service? Consider canceling or downsizing to save some extra cash.",
+      "visual": "B-roll footage of a person canceling a subscription on their phone, and another person working out at home instead of the gym. The host appears on screen with a tablet, showing a list of subscriptions.",
+      "duration_sec": 60
+    },
+    {
+      "section": "Tip #3: Cook at Home",
+      "timestamp": "3:45",
+      "voiceover": "Tip number three: cook at home. Eating out can be expensive, so try cooking at home instead. You can save money by buying ingredients in bulk and planning your meals ahead of time.",
+      "visual": "B-roll footage of a person cooking at home, and another person shopping for groceries. The host appears on screen with a cookbook, showing a recipe.",
+      "duration_sec": 60
+    },
+    {
+      "section": "Tip #4: Shop Smart",
+      "timestamp": "5:15",
+      "voiceover": "Tip number four: shop smart. When you do need to shop, make sure you're getting the best deal. Compare prices, look for discounts, and use cashback apps to earn some extra money.",
+      "visual": "B-roll footage of a person shopping online, and another person using a cashback app on their phone. The host appears on screen with a tablet, showing a comparison of prices.",
+      "duration_sec": 60
+    },
+    {
+      "section": "Tip #5: Avoid Impulse Buys",
+      "timestamp": "6:45",
+      "voiceover": "Tip number five: avoid impulse buys. Think twice before making a purchase, and ask yourself if it's really necessary. You can save money by avoiding impulse buys and sticking to your shopping list.",
+      "visual": "B-roll footage of a person thinking before making a purchase, and another person sticking to their shopping list. The host appears on screen with a thought bubble, showing a list of questions to ask before making a purchase.",
+      "duration_sec": 60
+    },
+    {
+      "section": "Summary",
+      "timestamp": "8:00",
+      "voiceover": "And there you have it, folks! Our top saving money tips to help you reach your goal of saving $500 in 60 days. Remember to create a budget, cut back on subscriptions, cook at home, shop smart, and avoid impulse buys.",
+      "visual": "The host appears on screen with a friendly smile, summarizing the tips. B-roll footage of a person saving money and investing plays in the background.",
+      "duration_sec": 60
+    },
+    {
+      "section": "CTA/Outro",
+      "timestamp": "9:00",
+      "voiceover": "Thanks for watching, and don't forget to like and subscribe for more personal finance content. If you found these tips helpful, be sure to share them with a friend or family member who could use some help saving money.",
+      "visual": "The host appears on screen with a friendly smile, thanking the viewer for watching. The MoneyMoves logo appears on screen, along with a call-to-action to like and subscribe.",
+      "duration_sec": 60
+    }
+  ]
+}

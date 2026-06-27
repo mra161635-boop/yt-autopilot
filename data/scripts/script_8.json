@@ -1,0 +1,83 @@
+{
+  "title": "Frugal Living 101: Live on 50% of Income",
+  "description": "Welcome to MoneyMoves! Are you tired of living paycheck to paycheck? In this video, we'll share our top tips on frugal living for beginners. By following these simple steps, you can learn to live on 50% of your income and start building wealth. Timestamps: 0:00 - Introduction to frugal living0:45 - Tip #1: Create a budget and track expenses2:30 - Tip #2: Cut back on unnecessary subscriptions4:15 - Tip #3: Cook at home and meal prep6:00 - Tip #4: Shop smart and save on everyday items7:45 - Tip #5: Use the 50/30/20 rule for stress-free finance9:30 - Summary and final thoughts10:00 - Call to action and next stepsDon't forget to subscribe to our channel for more personal finance tips and tricks! If you have any questions or topics you'd like us to cover, please leave a comment below.#FrugalLiving #SaveMoney #PersonalFinance #MoneyMoves #FinancialFreedom #WealthBuilding #BeginnerFriendly #MoneyTips #SavvySpender #FinancialLiteracy",
+  "tags": [
+    "frugal living",
+    "beginner",
+    "save money",
+    "personal finance",
+    "financial freedom",
+    "wealth building",
+    "money tips",
+    "savvy spender",
+    "financial literacy",
+    "budgeting",
+    "expense tracking"
+  ],
+  "thumbnail_prompt": "A young adult with a big smile, holding a piggy bank and surrounded by coins, with a cityscape in the background. The text overlay should read 'Live on 50% of Your Income' in a bold, white font. The style should be bright, colorful, and playful, with a mix of warm and cool colors. The facial expression should be energetic and optimistic.",
+  "script": [
+    {
+      "section": "Hook",
+      "timestamp": "0:00",
+      "voiceover": "Hey there, future millionaires! Are you tired of living paycheck to paycheck? What if I told you that you can live on 50% of your income and start building wealth? Sounds too good to be true, right? But with these simple frugal living tips, you can make it a reality!",
+      "visual": "Upbeat background music starts playing. A young adult is shown walking down the street, looking stressed, with a paycheck in hand. The camera zooms in on the paycheck, and then cuts to a shot of a piggy bank with coins flowing in.",
+      "duration_sec": 15
+    },
+    {
+      "section": "Intro",
+      "timestamp": "0:15",
+      "voiceover": "Welcome to MoneyMoves! In this video, we'll share our top tips on frugal living for beginners. From creating a budget to cooking at home, we'll cover it all. So, let's get started and take the first step towards financial freedom!",
+      "visual": "The MoneyMoves logo appears on screen, with a animated transition to a shot of a person sitting at a desk, with a budgeting book and a pen. B-roll footage of people doing everyday activities, such as grocery shopping and cooking, starts playing in the background.",
+      "duration_sec": 30
+    },
+    {
+      "section": "Tip #1: Create a budget and track expenses",
+      "timestamp": "0:45",
+      "voiceover": "Tip number one: create a budget and track your expenses. You can't manage what you don't measure, right? Start by writing down all your income and expenses, and then categorize them into needs and wants. Use a budgeting app or a spreadsheet to make it easier.",
+      "visual": "A person is shown sitting at a desk, with a budgeting book and a pen. B-roll footage of people using budgeting apps and spreadsheets on their laptops and phones starts playing in the background.",
+      "duration_sec": 45
+    },
+    {
+      "section": "Tip #2: Cut back on unnecessary subscriptions",
+      "timestamp": "2:30",
+      "voiceover": "Tip number two: cut back on unnecessary subscriptions. Take a closer look at your monthly subscriptions, such as streaming services and gym memberships. Ask yourself if you're really using them, and cancel anything that's not bringing you value.",
+      "visual": "A person is shown holding a remote control, with a TV screen in the background showing multiple streaming services. B-roll footage of people working out at home and canceling subscriptions on their phones starts playing in the background.",
+      "duration_sec": 45
+    },
+    {
+      "section": "Tip #3: Cook at home and meal prep",
+      "timestamp": "4:15",
+      "voiceover": "Tip number three: cook at home and meal prep. Eating out can be expensive, so try to cook at home as much as possible. Meal prep is also a great way to save time and money during the week.",
+      "visual": "A person is shown cooking in the kitchen, with a meal prep container in the foreground. B-roll footage of people cooking at home and meal prepping starts playing in the background.",
+      "duration_sec": 45
+    },
+    {
+      "section": "Tip #4: Shop smart and save on everyday items",
+      "timestamp": "6:00",
+      "voiceover": "Tip number four: shop smart and save on everyday items. Compare prices, use coupons, and buy in bulk to save money on groceries and household essentials.",
+      "visual": "A person is shown shopping at a grocery store, with a cart full of groceries. B-roll footage of people comparing prices and using coupons starts playing in the background.",
+      "duration_sec": 45
+    },
+    {
+      "section": "Tip #5: Use the 50/30/20 rule",
+      "timestamp": "7:45",
+      "voiceover": "Tip number five: use the 50/30/20 rule. Allocate 50% of your income towards necessary expenses, 30% towards discretionary spending, and 20% towards saving and debt repayment. This will help you prioritize your spending and achieve financial stability.",
+      "visual": "A person is shown holding a whiteboard marker, with the 50/30/20 rule written on a whiteboard. B-roll footage of people managing their finances and achieving financial stability starts playing in the background.",
+      "duration_sec": 45
+    },
+    {
+      "section": "Summary",
+      "timestamp": "9:30",
+      "voiceover": "And there you have it, folks! Our top tips on frugal living for beginners. Remember, it's all about making small changes to your daily habits and being mindful of your spending. By following these tips, you can live on 50% of your income and start building wealth.",
+      "visual": "A summary graphic appears on screen, with all the tips listed. B-roll footage of people living frugally and achieving financial freedom starts playing in the background.",
+      "duration_sec": 30
+    },
+    {
+      "section": "CTA/Outro",
+      "timestamp": "10:00",
+      "voiceover": "Thanks for watching MoneyMoves! If you found this video helpful, please like and subscribe for more personal finance tips and tricks. Don't forget to hit the notification bell and join our community of savvy spenders.",
+      "visual": "The MoneyMoves logo appears on screen, with a call-to-action to subscribe and join the community. The video ends with a shot of a person smiling and holding a piggy bank, with the channel's tagline 'Take control of your finances, take control of your life' appearing on screen.",
+      "duration_sec": 30
+    }
+  ]
+}

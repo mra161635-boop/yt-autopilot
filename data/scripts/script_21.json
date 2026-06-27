@@ -1,0 +1,15 @@
+{
+  "title": "Credit Score Hacks",
+  "description": "Boost your credit score in 5 minutes!",
+  "tags": "[\"credit score tips\", \"credit score for beginners\", \"credit report\"]",
+  "thumbnail_prompt": "YouTube thumbnail for: Credit Score Hacks",
+  "script": [
+    {
+      "section": "Full",
+      "timestamp": "0:00",
+      "voiceover": "{\n  \"title\": \"Boost Credit Score in 5 Min!\",\n  \"description\": \"Want to boost your credit score in just 5 minutes? In this video, we'll share our top credit score hacks for beginners. Whether you're looking to improve your credit score for a mortgage, loan, or credit card, these tips will get you started. Timestamps: \n  0:00 - Introduction to credit score hacks\n  0:15 - What is a credit score and why is it important?\n  1:30 - Tip #1: Check your credit report for errors\n  3:00 - Tip #2: Pay your bills on time\n  4:20 - Tip #3: Keep your credit utilization ratio low\n  5:40 - Tip #4: Don't open too many new credit accounts\n  6:50 - Tip #5: Monitor your credit score regularly\n  8:00 - Summary and next steps\n  9:00 - Call to action and final thoughts. \n  If you're new to personal finance, be sure to subscribe to our channel for more tips and tricks on saving and investing. #creditscoretips #creditscoreforbeginners #creditreport #personalfinance #moneymoves #investingforbeginners #savemoney #financialfreedom\",\n  \"tags\": [\"credit score tips\", \"credit score for beginners\", \"credit report\", \"personal finance\", \"money moves\", \"investing for beginners\", \"save money\", \"financial freedom\", \"credit score hacks\", \"credit utilization ratio\"],\n  \"thumbnail_prompt\": \"A young adult with a surprised and excited expression, looking at their phone with a high credit score on the screen. The background is a bright and colorful gradient, with a cityscape at sunset. The text overlay reads 'Boost Credit Score in 5 Min!' in bold, white font. The style is modern, playful, and energetic, with a mix of digital and realistic elements.\",\n  \"script\": [\n    {\n      \"section\": \"Hook\",\n      \"timestamp\": \"0:00\",\n      \"voiceover\": \"Hey there, Money Movers! Are you tired of having a low credit score holding you back? Well, today we're going to change that. In just 5 minutes, you can start boosting your credit score and unlocking better financial opportunities.\",\n      \"visual\": \"Upbeat background music s",
+      "visual": "talking head",
+      "duration_sec": 300
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "title": "Debt Snowball: Pay Off Debt Fast!",
+  "description": "Are you tired of feeling overwhelmed by debt? In this video, we'll show you how to pay off debt in just 6 months using the debt snowball method. Whether you're a beginner or just looking for a fresh start, this video is for you. We'll cover the basics of the debt snowball, how to get started, and provide tips for success. Timestamps: Intro (0:15), What is the Debt Snowball? (1:00), How to Get Started (2:30), Tips for Success (4:00), Summary (5:30), CTA/Outro (6:30). Don't forget to like, comment, and subscribe for more personal finance tips! #debtsnowball #personalfinance #moneytips #debtrepayment #financialfreedom #moneymoves #savemoney #investmoney #frugalliving #budgetingtips",
+  "tags": [
+    "debt snowball",
+    "beginner",
+    "debt repayment",
+    "personal finance",
+    "money tips",
+    "financial freedom",
+    "save money",
+    "invest money",
+    "frugal living",
+    "budgeting tips",
+    "money moves"
+  ],
+  "thumbnail_prompt": "A young adult with a determined expression, standing in front of a whiteboard with a debt snowball diagram. The background is a bright, calming blue, and the text overlay reads 'Pay Off Debt in 6 Months!' in bold, white font. The style is modern, minimalist, and motivational.",
+  "script": [
+    {
+      "section": "Hook",
+      "timestamp": "0:00",
+      "voiceover": "Are you tired of feeling like you're drowning in debt? Well, we've got some exciting news for you! With the debt snowball method, you can pay off your debt in just 6 months. That's right, in half a year, you could be debt-free and on your way to financial freedom.",
+      "visual": "A person stuck in a sea of bills and debt collectors, with a clock ticking in the background. Suddenly, a snowball appears and starts rolling, gaining speed and size as it goes.",
+      "duration_sec": 15
+    },
+    {
+      "section": "Intro",
+      "timestamp": "0:15",
+      "voiceover": "Hey there, MoneyMovers! Welcome back to our channel. If you're new here, consider subscribing for more personal finance tips and tricks. Today, we're talking about the debt snowball method, a simple yet powerful way to pay off your debt and start building wealth.",
+      "visual": "A friendly host appears on screen with a warm smile, standing in front of a colorful background with debt-related graphics and animations.",
+      "duration_sec": 30
+    },
+    {
+      "section": "What is the Debt Snowball?",
+      "timestamp": "1:00",
+      "voiceover": "So, what is the debt snowball method? Simply put, it's a way of paying off your debts one by one, starting with the smallest balance first. You'll make minimum payments on all your debts except the smallest one, which you'll attack with as much money as possible.",
+      "visual": "An animation of a debt snowball appears on screen, with each debt represented by a different colored ball. The smallest ball is highlighted, and the host explains the concept using simple graphics and examples.",
+      "duration_sec": 45
+    },
+    {
+      "section": "How to Get Started",
+      "timestamp": "2:30",
+      "voiceover": "Getting started with the debt snowball is easy. First, make a list of all your debts, including the balance, interest rate, and minimum payment. Then, sort them by balance, from smallest to largest. Next, calculate how much money you can afford to put towards your debt each month.",
+      "visual": "A person is shown sitting at a desk, surrounded by papers, pens, and a calculator. They're making a list of their debts and sorting them by balance. B-roll footage of a budgeting app or spreadsheet appears on screen.",
+      "duration_sec": 60
+    },
+    {
+      "section": "Tips for Success",
+      "timestamp": "4:00",
+      "voiceover": "To make the debt snowball work for you, it's essential to stay motivated and focused. Here are some tips to help you succeed: cut back on unnecessary expenses, use the 50/30/20 rule, and consider consolidating your debt into a lower-interest loan or credit card.",
+      "visual": "The host appears on screen with a friendly smile, sharing tips and advice using engaging graphics and animations. B-roll footage of a person cutting back on expenses, such as cooking at home or canceling subscriptions, appears on screen.",
+      "duration_sec": 60
+    },
+    {
+      "section": "Summary",
+      "timestamp": "5:30",
+      "voiceover": "That's it for today's video on the debt snowball method. To recap, the debt snowball is a simple and effective way to pay off your debt and start building wealth. Remember to stay motivated, focus on the smallest balance first, and make adjustments as needed.",
+      "visual": "A summary of the debt snowball method appears on screen, with key points highlighted in a colorful and engaging way. The host summarizes the main points and provides encouragement.",
+      "duration_sec": 30
+    },
+    {
+      "section": "CTA/Outro",
+      "timestamp": "6:30",
+      "voiceover": "Thanks for watching, MoneyMovers! If you're ready to start your debt snowball journey, be sure to like, comment, and subscribe for more personal finance tips and tricks. Don't forget to hit the notification bell and share this video with a friend who might need it. See you in the next video!",
+      "visual": "The host appears on screen with a friendly smile, thanking the audience for watching and encouraging them to engage with the channel. A call-to-action appears on screen, with a link to a free resource or budgeting template.",
+      "duration_sec": 30
+    }
+  ]
+}

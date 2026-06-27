@@ -1,0 +1,78 @@
+{
+  "title": "Retirement Planning 101",
+  "description": "Hey everyone, welcome back to MoneyMoves! Are you in your 20s and thinking about retirement? You're not alone! Many of us think that retirement planning is something we can worry about later, but the truth is, the earlier you start, the better. In this video, we'll be discussing the basics of retirement planning and how you can get started. Timestamps: Intro (0:00), What is Retirement Planning? (0:45), Why Start Early? (2:30), 401k and Other Options (4:15), Creating a Plan (6:00), Summary (8:00), CTA/Outro (9:30). Don't forget to like, comment, and subscribe for more personal finance content! If you're looking for more tips on saving and investing, check out our other videos. #retirementplanning #beginner #401k #personalfinance #moneymoves #savemoney #investmoney",
+  "tags": [
+    "retirement planning",
+    "beginner",
+    "401k",
+    "personal finance",
+    "money moves",
+    "save money",
+    "invest money",
+    "financial freedom",
+    "early retirement",
+    "wealth creation",
+    "financial literacy",
+    "money tips",
+    "investing 101"
+  ],
+  "thumbnail_prompt": "A young adult (20s) with a surprised expression, looking at a phone or laptop with a shocked face, while sitting in front of a city skyline or a beach. The background should be colorful and vibrant. Text overlay: 'Retirement Planning in Your 20s?' with a bold, playful font. Style: modern, minimalist, and eye-catching.",
+  "script": [
+    {
+      "section": "Hook",
+      "timestamp": "0:00",
+      "voiceover": "What if I told you that starting to plan for retirement in your 20s could make you a millionaire by the time you're 60? Sounds crazy, right? But it's true! And in this video, we'll show you how.",
+      "visual": "A close-up shot of a young adult looking shocked or surprised, with a city skyline or a beach in the background.",
+      "duration_sec": 15
+    },
+    {
+      "section": "Intro",
+      "timestamp": "0:15",
+      "voiceover": "Hey everyone, welcome back to MoneyMoves! Today we're talking about retirement planning. I know, I know, it sounds boring, but trust me, it's not. And if you're in your 20s, you're in the perfect position to start building wealth.",
+      "visual": "A shot of the host speaking directly to the camera, with a friendly and energetic tone.",
+      "duration_sec": 30
+    },
+    {
+      "section": "What is Retirement Planning?",
+      "timestamp": "0:45",
+      "voiceover": "So, what is retirement planning? Simply put, it's the process of creating a plan to ensure you have enough money to support yourself in retirement. And it's not just about saving money, it's about investing it wisely and creating a sustainable income stream.",
+      "visual": "B-roll footage of people working, saving money, and investing, with animations and graphics to illustrate the concept.",
+      "duration_sec": 60
+    },
+    {
+      "section": "Why Start Early?",
+      "timestamp": "2:30",
+      "voiceover": "So, why is it so important to start planning for retirement early? The answer is compound interest. When you start saving and investing early, your money has more time to grow, and that can make a huge difference in the long run.",
+      "visual": "A graph or animation showing how compound interest works, with examples of how much money you can save by starting early.",
+      "duration_sec": 90
+    },
+    {
+      "section": "401k and Other Options",
+      "timestamp": "4:15",
+      "voiceover": "Now, let's talk about some of the options you have for retirement planning. One of the most popular is a 401k, which is a type of employer-sponsored retirement plan. But there are also IRAs, Roth IRAs, and other options to consider.",
+      "visual": "B-roll footage of people at work, with animations and graphics to illustrate the different types of retirement plans.",
+      "duration_sec": 90
+    },
+    {
+      "section": "Creating a Plan",
+      "timestamp": "6:00",
+      "voiceover": "So, how do you create a retirement plan? It's actually pretty simple. First, you need to determine how much you need to save each month. Then, you need to choose the right investments and create a diversified portfolio.",
+      "visual": "A shot of the host speaking directly to the camera, with a whiteboard or graph behind them to illustrate the steps.",
+      "duration_sec": 120
+    },
+    {
+      "section": "Summary",
+      "timestamp": "8:00",
+      "voiceover": "And that's it! Retirement planning might seem overwhelming, but it's actually pretty simple. Just remember to start early, take advantage of compound interest, and create a diversified portfolio.",
+      "visual": "A shot of the host summarizing the key points, with a friendly and energetic tone.",
+      "duration_sec": 60
+    },
+    {
+      "section": "CTA/Outro",
+      "timestamp": "9:30",
+      "voiceover": "Thanks for watching, everyone! If you liked this video, be sure to like, comment, and subscribe for more personal finance content. And if you have any questions or topics you'd like to discuss, leave them in the comments below.",
+      "visual": "A shot of the host speaking directly to the camera, with a friendly and energetic tone, and a call-to-action on the screen.",
+      "duration_sec": 30
+    }
+  ]
+}
