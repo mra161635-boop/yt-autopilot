@@ -9,13 +9,20 @@ from utils.db import save_video, mark_published, update_idea_status
 from utils.youtube_api import upload_video
 
 
+def _normalize_day(day: str) -> str:
+    """Convert 'Mon' to 'Monday', 'Tue' to 'Tuesday', etc."""
+    abbrs = {"mon":"Monday","tue":"Tuesday","wed":"Wednesday","thu":"Thursday",
+             "fri":"Friday","sat":"Saturday","sun":"Sunday"}
+    return abbrs.get(day.strip().lower()[:3], day.strip().title())
+
+
 def get_next_publish_time(publish_days: list[str]) -> str:
     """Returns ISO 8601 UTC string for the next target publish day at PUBLISH_HOUR."""
     from datetime import timedelta
     day_map = {"Monday":0,"Tuesday":1,"Wednesday":2,"Thursday":3,
                "Friday":4,"Saturday":5,"Sunday":6}
     now = datetime.now(timezone.utc)
-    targets = sorted([day_map[d] for d in publish_days])
+    targets = sorted([day_map[_normalize_day(d)] for d in publish_days])
 
     for days_ahead in range(1, 8):
         candidate = now + timedelta(days=days_ahead)
