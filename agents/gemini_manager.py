@@ -146,7 +146,6 @@ def build_channel_report() -> dict:
             if va:
                 entry["avg_watch_pct"] = round(float(va.get("averageViewPercentage", 0)), 1)
                 entry["thumbnail_ctr"] = round(float(va.get("videoThumbnailImpressionsClickRate", 0)) * 100, 2)
-                entry["shares"] = int(va.get("shares", 0))
         video_data.append(entry)
 
     strategy = get_strategy()
@@ -182,7 +181,6 @@ def build_channel_report() -> dict:
             "subscribers_lost":      int(overview.get("subscribersLost", 0)),
             "likes":            int(overview.get("likes", 0)),
             "comments":         int(overview.get("comments", 0)),
-            "shares":           int(overview.get("shares", 0)),
             "thumbnail_impressions": int(overview.get("videoThumbnailImpressions", 0)),
             "thumbnail_ctr_pct": round(float(overview.get("videoThumbnailImpressionsClickRate", 0)) * 100, 2),
             "traffic_sources":  traffic_summary,

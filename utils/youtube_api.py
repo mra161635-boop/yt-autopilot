@@ -170,15 +170,27 @@ def _parse_analytics_rows(response: dict) -> list[dict]:
 
 
 def get_channel_overview(days: int = 28) -> dict:
-    """Channel-level KPIs: views, watch time, subscriber net, likes, comments, shares, CTR."""
+    """Channel-level KPIs: views, watch time, subscriber net, likes, comments.
+    Note: shares + impressions require a dimension, fetched separately."""
     resp = _query_analytics(
         metrics=["views", "estimatedMinutesWatched", "averageViewDuration",
-                 "subscribersGained", "subscribersLost", "likes", "comments",
-                 "shares", "videoThumbnailImpressions", "videoThumbnailImpressionsClickRate"],
+                 "subscribersGained", "subscribersLost", "likes", "comments"],
         days=days
     )
     rows = _parse_analytics_rows(resp)
-    return rows[0] if rows else {}
+    result = rows[0] if rows else {}
+    # Fetch impression data separately (requires video dimension)
+    imp = _query_analytics(
+        metrics=["views", "videoThumbnailImpressions", "videoThumbnailImpressionsClickRate"],
+        dimensions=["video"],
+        days=days
+    )
+    imp_rows = _parse_analytics_rows(imp)
+    if imp_rows:
+        result["videoThumbnailImpressions"] = sum(int(r.get("videoThumbnailImpressions", 0)) for r in imp_rows)
+        ctr_vals = [float(r.get("videoThumbnailImpressionsClickRate", 0)) for r in imp_rows if r.get("videoThumbnailImpressionsClickRate")]
+        result["videoThumbnailImpressionsClickRate"] = (sum(ctr_vals) / len(ctr_vals)) if ctr_vals else 0
+    return result
 
 
 def get_traffic_sources(days: int = 28) -> list[dict]:
@@ -216,16 +228,19 @@ def get_content_type_performance(days: int = 28) -> dict:
 
 
 def get_video_analytics(video_id: str, days: int = 90) -> dict:
-    """Per-video analytics: avg view duration, avg view %, thumbnail CTR, shares."""
+    """Per-video analytics: avg view duration, avg view %, thumbnail CTR."""
     resp = _query_analytics(
         metrics=["views", "averageViewDuration", "averageViewPercentage",
-                 "likes", "comments", "shares",
+                 "likes", "comments",
                  "videoThumbnailImpressions", "videoThumbnailImpressionsClickRate"],
         filters=f"video=={video_id}",
         days=days
     )
     rows = _parse_analytics_rows(resp)
-    return rows[0] if rows else {}
+    result = rows[0] if rows else {}
+    if result:
+        result.pop("filters", None)
+    return result
 
 
 def get_recent_comments(video_id: str, max_results: int = 50) -> list[str]:
