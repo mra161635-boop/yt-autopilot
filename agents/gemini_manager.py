@@ -4,7 +4,14 @@ from datetime import datetime, timezone
 from config import CHANNEL_NICHE, CHANNEL_NAME, TARGET_AUDIENCE, CHANNEL_STYLE
 from utils.db import get_published_videos, get_strategy, save_strategy, get_conn, pending_idea_count
 from utils.llm import llm_complete
-from utils.youtube_api import get_channel_stats
+from utils.youtube_api import (
+    get_channel_stats,
+    get_channel_overview,
+    get_traffic_sources,
+    get_device_breakdown,
+    get_content_type_performance,
+    get_video_analytics,
+)
 
 
 MODEL_HINT = "gemini-2.0-flash"  # passed to LLM for context (uses Groq-compatible provider)
@@ -78,24 +85,6 @@ def build_channel_report() -> dict:
                     else "declining" if recent_avg < older_avg * 0.8
                     else "stable")
 
-    video_data = []
-    for v in videos_sorted[:20]:
-        views = v.get("views", 0)
-        likes = v.get("likes", 0)
-        video_data.append({
-            "title":         v.get("title", "Unknown"),
-            "youtube_id":    v.get("youtube_id", ""),
-            "published":     (v.get("published_at") or "")[:10],
-            "views":         views,
-            "likes":         likes,
-            "comments":      v.get("comments", 0),
-            "like_rate_pct": round(likes / views * 100, 2) if views > 0 else 0,
-            "avg_watch_pct": v.get("avg_watch_pct", 0),
-        })
-
-    strategy = get_strategy()
-    strategy_text = strategy if isinstance(strategy, str) else json.dumps(strategy)
-
     try:
         channel_stats = get_channel_stats()
     except Exception:
@@ -108,6 +97,60 @@ def build_channel_report() -> dict:
         stage = "growth (1k-10k subs)"
     else:
         stage = "established (10k+ subs)"
+
+    # ── YouTube Analytics API (28-day window) ──────────────────────────────
+    overview = get_channel_overview(days=28) if videos else {}
+    traffic  = get_traffic_sources(days=28)  if videos else []
+    devices  = get_device_breakdown(days=28) if videos else []
+    ctypes   = get_content_type_performance(days=28) if videos else {}
+
+    def _pct(val, total):
+        return round(val / total * 100, 1) if total else 0
+
+    total_views_28d = int(overview.get("views", 0))
+    traffic_summary = []
+    for t in traffic:
+        v = int(t.get("views", 0))
+        traffic_summary.append({
+            "source": t.get("insightTrafficSourceType", "unknown"),
+            "views": v,
+            "pct": _pct(v, total_views_28d) if total_views_28d else 0,
+        })
+
+    device_summary = []
+    for d in devices:
+        v = int(d.get("views", 0))
+        device_summary.append({
+            "device": d.get("deviceType", "unknown"),
+            "views": v,
+            "pct": _pct(v, total_views_28d) if total_views_28d else 0,
+        })
+
+    # ── Enrich top videos with Analytics API data ──────────────────────────
+    video_data = []
+    for v in videos_sorted[:20]:
+        views = v.get("views", 0)
+        likes = v.get("likes", 0)
+        entry = {
+            "title":         v.get("title", "Unknown"),
+            "youtube_id":    v.get("youtube_id", ""),
+            "published":     (v.get("published_at") or "")[:10],
+            "views":         views,
+            "likes":         likes,
+            "comments":      v.get("comments", 0),
+            "like_rate_pct": round(likes / views * 100, 2) if views > 0 else 0,
+            "avg_watch_pct": v.get("avg_watch_pct", 0),
+        }
+        if entry["youtube_id"]:
+            va = get_video_analytics(entry["youtube_id"], days=90)
+            if va:
+                entry["avg_watch_pct"] = round(float(va.get("averageViewPercentage", 0)), 1)
+                entry["thumbnail_ctr"] = round(float(va.get("videoThumbnailImpressionsClickRate", 0)) * 100, 2)
+                entry["shares"] = int(va.get("shares", 0))
+        video_data.append(entry)
+
+    strategy = get_strategy()
+    strategy_text = strategy if isinstance(strategy, str) else json.dumps(strategy)
 
     current_goal = get_current_goal({
         "kpis": {"subscribers": subs, "total_videos_published": len(videos)}
@@ -131,6 +174,21 @@ def build_channel_report() -> dict:
             "growth_trend": growth_trend,
             "pending_ideas_in_queue": pending_idea_count(),
         },
+        "analytics_28d": {
+            "views":          total_views_28d,
+            "watch_time_min": int(overview.get("estimatedMinutesWatched", 0)),
+            "avg_view_duration_sec": int(overview.get("averageViewDuration", 0)),
+            "subscribers_gained":    int(overview.get("subscribersGained", 0)),
+            "subscribers_lost":      int(overview.get("subscribersLost", 0)),
+            "likes":            int(overview.get("likes", 0)),
+            "comments":         int(overview.get("comments", 0)),
+            "shares":           int(overview.get("shares", 0)),
+            "thumbnail_impressions": int(overview.get("videoThumbnailImpressions", 0)),
+            "thumbnail_ctr_pct": round(float(overview.get("videoThumbnailImpressionsClickRate", 0)) * 100, 2),
+            "traffic_sources":  traffic_summary,
+            "device_breakdown": device_summary,
+            "content_type_performance": ctypes,
+        },
         "videos": video_data,
         "current_directives": get_directives(),
         "current_strategy": strategy_text[:2000],
@@ -153,6 +211,47 @@ CHANNEL STRATEGY KNOWLEDGE:
 
 - Ideal ratio: ~1 Short for every Long video. Cut the hook section from the long video
   into a Short (auto-clip, almost zero extra production work).
+
+ANALYTICS INTERPRETATION GUIDE:
+The report includes `analytics_28d` with these dimensions. Use them to diagnose:
+
+1. **Traffic sources** (`traffic_sources`): Where views come from.
+   - `YT_SEARCH` = YouTube search results. High = good SEO/titles. Low = fix titles, tags.
+   - `YT_HOME` (browse) = YouTube homepage suggestions. High = algorithm pushing your content.
+   - `YT_CHANNEL` = viewers browsing your channel page. High = strong audience, consider playlists.
+   - `YT_TRENDING` = on trending shelf. Rare but powerful.
+   - `YT_SHORTS` = Shorts feed. High = Shorts are working for discovery.
+   - `EXTERNAL` = embedded / shared off-platform. High = share-worthy content.
+   - `YT_OTHER_PAGE` = suggested videos sidebar. Optimise end screens and cards.
+   - Dominant source tells you where to focus. If search is low → improve titles/descriptions.
+     If browse is low → algorithm isn't recommending you → improve retention/CTR.
+
+2. **Device breakdown** (`device_breakdown`): How viewers watch.
+   - `MOBILE` > 70% means most viewers are on phones → vertical thumbnails, short attention spans.
+   - `DESKTOP` high means deep-dive audience → longer videos, detailed explanations.
+   - `TV` high means cinematic/topical content → high production value matters.
+   - Adjust video length and thumbnail design based on the dominant device.
+
+3. **Content type performance** (`content_type_performance`): Shorts vs long-form.
+   - Compare `SHORTS` and `VIDEOS` (long-form) on views, watch time, avg view duration.
+   - If Shorts drive views but low watch time → use them for discovery, not retention.
+   - If long-form has high avg view duration → the format resonates. Make more.
+
+4. **Thumbnail CTR** (`thumbnail_ctr_pct`): Percentage of impressions that became views.
+   - Below 2% = thumbnails are failing. Above 5% = thumbnails are strong.
+   - Low CTR + high avg view duration = thumbnails are the bottleneck. Fix them.
+   - High CTR + low avg view duration = thumbnails over-promise. Tone them down.
+
+5. **Audience engagement** (subscribers_gained vs lost, likes, comments, shares):
+   - Net subscriber growth = channel health signal.
+   - Subscribers lost > gained in a period → content mismatch or infrequent posting.
+   - Low comments despite high views → add better CTAs and prompts.
+   - High shares = content is click-worthy beyond your audience.
+
+6. **Per-video analytics** (`videos` list, `avg_watch_pct`, `thumbnail_ctr`):
+   - avg_watch_pct > 60% = excellent retention. Study what those videos do differently.
+   - avg_watch_pct < 30% = viewers drop off early. Fix the hook.
+   - thumbnail_ctr < 2% per video means the title/thumbnail combo isn't working.
 
 Available directives (only include what you're changing):
 {{
@@ -186,7 +285,7 @@ Available directives (only include what you're changing):
   }}
 }}
 
-Be SPECIFIC. Base every directive on the data. Return ONLY valid JSON."""
+Be SPECIFIC. Base every directive on the data. Cite the numbers you see (CTR, traffic source %, device %, avg watch time). Return ONLY valid JSON."""
 
 
 def run_manager_analysis(report: dict) -> dict:
@@ -218,6 +317,7 @@ def apply_directives_to_pipeline(directives: dict):
 
 def format_manager_report(report: dict, analysis: dict) -> str:
     kpis = report.get("kpis", {})
+    a28d = report.get("analytics_28d", {})
     a    = analysis.get("analysis", {})
     d    = analysis.get("directives", {})
     lines = [
@@ -229,6 +329,27 @@ def format_manager_report(report: dict, analysis: dict) -> str:
         f"  Subs: {kpis.get('subscribers',0):,}  |  Next goal: {kpis.get('next_goal','?')}"
         f"  {kpis.get('total_videos_published',0)} videos  |  {kpis.get('total_views',0):,} views",
         f"  Growth: {kpis.get('growth_trend','---').upper()}  |  Recent avg: {kpis.get('recent_avg_views',0):,.0f} views",
+        "",
+        "--- 28-DAY ANALYTICS ---------------------------------------",
+        f"  Views: {a28d.get('views',0):,}  |  Watch time: {a28d.get('watch_time_min',0):,} min",
+        f"  Subs: +{a28d.get('subscribers_gained',0)} / -{a28d.get('subscribers_lost',0)}  |  Net: {a28d.get('subscribers_gained',0) - a28d.get('subscribers_lost',0)}",
+        f"  Thumbnail CTR: {a28d.get('thumbnail_ctr_pct','?')}%  |  Avg duration: {a28d.get('avg_view_duration_sec',0)}s",
+    ]
+    # traffic sources
+    traffic = a28d.get("traffic_sources", [])
+    if traffic:
+        lines.append("  Traffic:")
+        for t in sorted(traffic, key=lambda x: x.get("pct", 0), reverse=True)[:5]:
+            src = t.get("source", "?")[:20].replace("_", " ").title()
+            lines.append(f"    {src:20s} {t.get('pct',0):5.1f}%  ({t.get('views',0):,} views)")
+    # device breakdown
+    devices = a28d.get("device_breakdown", [])
+    if devices:
+        lines.append("  Devices:")
+        for d_ in sorted(devices, key=lambda x: x.get("pct", 0), reverse=True):
+            dev = d_.get("device", "?")[:10].title()
+            lines.append(f"    {dev:10s} {d_.get('pct',0):5.1f}%")
+    lines += [
         "",
         "--- DIAGNOSIS ---------------------------------------------",
         f"  Status:          {a.get('growth_status','---')}",

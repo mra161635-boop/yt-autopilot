@@ -1,14 +1,15 @@
 """
-utils/youtube_api.py — thin wrapper around YouTube Data API v3.
+utils/youtube_api.py — wraps YouTube Data API v3 and YouTube Analytics API v2.
 
 Authentication: OAuth 2.0 (run once to get token, then reuses refresh token).
 Scopes needed:
   - https://www.googleapis.com/auth/youtube.upload
-  - https://www.googleapis.com/auth/youtube.readonly
+  - https://www.googleapis.com/auth/youtube.force-ssl
   - https://www.googleapis.com/auth/yt-analytics.readonly
 """
 
 import os, json, pickle
+from datetime import datetime, timedelta
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -23,7 +24,8 @@ SCOPES = [
 TOKEN_FILE = "data/yt_token.pickle"
 
 
-def get_youtube_service():
+def _load_credentials():
+    """Load or refresh OAuth credentials. Returns google.oauth2.credentials.Credentials."""
     creds = None
     if os.path.exists(TOKEN_FILE):
         with open(TOKEN_FILE, "rb") as f:
@@ -38,7 +40,15 @@ def get_youtube_service():
         with open(TOKEN_FILE, "wb") as f:
             pickle.dump(creds, f)
 
-    return build("youtube", "v3", credentials=creds)
+    return creds
+
+
+def get_youtube_service():
+    return build("youtube", "v3", credentials=_load_credentials())
+
+
+def get_analytics_service():
+    return build("youtubeAnalytics", "v2", credentials=_load_credentials())
 
 
 def upload_video(video_path: str, title: str, description: str, tags: list[str],
@@ -115,6 +125,107 @@ def get_channel_stats() -> dict:
         "total_views": int(s.get("viewCount", 0)),
         "total_videos": int(s.get("videoCount", 0)),
     }
+
+
+# ── YouTube Analytics API v2 ────────────────────────────────────────────────────
+
+
+def _get_channel_id() -> str | None:
+    try:
+        yt = get_youtube_service()
+        resp = yt.channels().list(part="id", mine=True).execute()
+        return resp["items"][0]["id"] if resp.get("items") else None
+    except Exception:
+        return None
+
+
+def _query_analytics(metrics: list[str], dimensions: list[str] = None,
+                     filters: str = None, days: int = 28) -> dict:
+    analytics = get_analytics_service()
+    channel_id = _get_channel_id()
+    if not channel_id:
+        return {}
+    end_date = datetime.utcnow().strftime("%Y-%m-%d")
+    start_date = (datetime.utcnow() - timedelta(days=days)).strftime("%Y-%m-%d")
+    params = {
+        "ids": f"channel=={channel_id}",
+        "startDate": start_date,
+        "endDate": end_date,
+        "metrics": ",".join(metrics),
+    }
+    if dimensions:
+        params["dimensions"] = ",".join(dimensions)
+    if filters:
+        params["filters"] = filters
+    try:
+        return analytics.reports().query(**params).execute()
+    except Exception as e:
+        print(f"[YT Analytics] Query failed ({metrics[0]}): {e}")
+        return {}
+
+
+def _parse_analytics_rows(response: dict) -> list[dict]:
+    headers = [h["name"] for h in response.get("columnHeaders", [])]
+    return [dict(zip(headers, row)) for row in response.get("rows", [])]
+
+
+def get_channel_overview(days: int = 28) -> dict:
+    """Channel-level KPIs: views, watch time, subscriber net, likes, comments, shares, CTR."""
+    resp = _query_analytics(
+        metrics=["views", "estimatedMinutesWatched", "averageViewDuration",
+                 "subscribersGained", "subscribersLost", "likes", "comments",
+                 "shares", "videoThumbnailImpressions", "videoThumbnailImpressionsClickRate"],
+        days=days
+    )
+    rows = _parse_analytics_rows(resp)
+    return rows[0] if rows else {}
+
+
+def get_traffic_sources(days: int = 28) -> list[dict]:
+    """Where views come from: YT search, suggested, browse, Shorts feed, etc."""
+    resp = _query_analytics(
+        metrics=["views", "estimatedMinutesWatched"],
+        dimensions=["insightTrafficSourceType"],
+        days=days
+    )
+    return _parse_analytics_rows(resp)
+
+
+def get_device_breakdown(days: int = 28) -> list[dict]:
+    """Views by device type: mobile, desktop, tablet, tv."""
+    resp = _query_analytics(
+        metrics=["views", "estimatedMinutesWatched"],
+        dimensions=["deviceType"],
+        days=days
+    )
+    return _parse_analytics_rows(resp)
+
+
+def get_content_type_performance(days: int = 28) -> dict:
+    """Shorts vs long-form performance comparison."""
+    resp = _query_analytics(
+        metrics=["views", "estimatedMinutesWatched", "averageViewDuration"],
+        dimensions=["creatorContentType"],
+        days=days
+    )
+    result = {}
+    for row in _parse_analytics_rows(resp):
+        ctype = row.pop("creatorContentType", "unknown")
+        result[ctype] = row
+    return result
+
+
+def get_video_analytics(video_id: str, days: int = 90) -> dict:
+    """Per-video analytics: avg view duration, avg view %, thumbnail CTR, shares."""
+    resp = _query_analytics(
+        metrics=["views", "averageViewDuration", "averageViewPercentage",
+                 "likes", "comments", "shares",
+                 "videoThumbnailImpressions", "videoThumbnailImpressionsClickRate"],
+        filters=f"video=={video_id}",
+        days=days
+    )
+    rows = _parse_analytics_rows(resp)
+    return rows[0] if rows else {}
 
 
 def get_recent_comments(video_id: str, max_results: int = 50) -> list[str]:
