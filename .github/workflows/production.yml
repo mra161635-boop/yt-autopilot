@@ -37,12 +37,14 @@ jobs:
             output/
           key: yt-autopilot-data
 
-      - name: Decode YouTube OAuth token
+      - name: Decode YouTube OAuth credentials
         env:
           TOKEN_B64: ${{ secrets.YT_TOKEN_PICKLE_B64 }}
+          YT_JSON_B64: ${{ secrets.YT_JSON_B64 }}
         run: |
           mkdir -p data
           echo "$TOKEN_B64" | base64 -d > data/yt_token.pickle
+          echo "$YT_JSON_B64" | base64 -d > YT.json
 
       - name: Run production cycle
         env:
