@@ -144,8 +144,8 @@ def build_channel_report() -> dict:
         if entry["youtube_id"]:
             va = get_video_analytics(entry["youtube_id"], days=90)
             if va:
-                entry["avg_watch_pct"] = round(float(va.get("averageViewPercentage", 0)), 1)
-                entry["thumbnail_ctr"] = round(float(va.get("videoThumbnailImpressionsClickRate", 0)) * 100, 2)
+                entry["analytics_views"] = int(va.get("views", 0))
+                entry["analytics_avg_duration"] = int(va.get("averageViewDuration", 0))
         video_data.append(entry)
 
     strategy = get_strategy()
@@ -181,8 +181,6 @@ def build_channel_report() -> dict:
             "subscribers_lost":      int(overview.get("subscribersLost", 0)),
             "likes":            int(overview.get("likes", 0)),
             "comments":         int(overview.get("comments", 0)),
-            "thumbnail_impressions": int(overview.get("videoThumbnailImpressions", 0)),
-            "thumbnail_ctr_pct": round(float(overview.get("videoThumbnailImpressionsClickRate", 0)) * 100, 2),
             "traffic_sources":  traffic_summary,
             "device_breakdown": device_summary,
             "content_type_performance": ctypes,
@@ -331,7 +329,7 @@ def format_manager_report(report: dict, analysis: dict) -> str:
         "--- 28-DAY ANALYTICS ---------------------------------------",
         f"  Views: {a28d.get('views',0):,}  |  Watch time: {a28d.get('watch_time_min',0):,} min",
         f"  Subs: +{a28d.get('subscribers_gained',0)} / -{a28d.get('subscribers_lost',0)}  |  Net: {a28d.get('subscribers_gained',0) - a28d.get('subscribers_lost',0)}",
-        f"  Thumbnail CTR: {a28d.get('thumbnail_ctr_pct','?')}%  |  Avg duration: {a28d.get('avg_view_duration_sec',0)}s",
+        f"  Avg duration: {a28d.get('avg_view_duration_sec',0)}s",
     ]
     # traffic sources
     traffic = a28d.get("traffic_sources", [])
