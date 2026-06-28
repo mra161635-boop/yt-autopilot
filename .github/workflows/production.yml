@@ -18,6 +18,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Enable YouTube Analytics API
+        run: >-
+          gcloud services enable youtubeanalytics.googleapis.com
+          --project=${{ secrets.GCP_PROJECT_ID }}
+          --no-user-output-enabled || true
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
